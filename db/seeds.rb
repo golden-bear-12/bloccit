@@ -23,6 +23,6 @@ Post.find_or_create_by(title: "Unique Title", body: "This is our unique body!")
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
 puts "find_or_create_by Unique Comment finished"
-Comment.find_or_create_by(body: "This is our unique comment!")
+Comment.find_or_create_by(body: "This is our unique comment!", post: post)
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
