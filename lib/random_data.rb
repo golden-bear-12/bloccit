@@ -7,7 +7,6 @@ module RandomData
     sentences.join(" ")
   end
 
-
   def self.random_sentence
     strings = []
     rand(3..8).times do
@@ -21,5 +20,14 @@ module RandomData
     letters = ('a'..'z').to_a
     letters.shuffle!
     letters[0,rand(3..8)].join
+  end
+
+  def self.random_resolved
+    rand(1)
+    if 1
+      true
+    else 0
+      false
+    end
   end
 end
