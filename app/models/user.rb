@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
-  before_save { self.name = name.split(' ').map { |names| names.capitalize }.join(' ') }
+  before_save { self.name = if name then name.split.map { |names| names.capitalize }.join(' ') end }
 
 
   validates :name, length: { minimum: 1, maximum: 100 }, presence: true
@@ -14,4 +14,5 @@ class User < ActiveRecord::Base
           length: { minimum: 3, maximum: 254 }
 
   has_secure_password
+
 end
