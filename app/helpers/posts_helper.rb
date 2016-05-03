@@ -1,5 +1,15 @@
 module PostsHelper
-  def user_is_authorized_for_post?(post)
+
+
+  def user_is_authorized_for_new_post?
+    current_user && (current_user == post.user || current_user.admin? || current_user.moderator?)
+  end
+
+  def user_is_authorized_for_edit_post?
+    current_user && (current_user == post.user || current_user.admin? || current_user.moderator?)
+  end
+
+  def user_is_authorized_for_delete_post?
     current_user && (current_user == post.user || current_user.admin?)
   end
 end
