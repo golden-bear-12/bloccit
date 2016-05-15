@@ -4,7 +4,6 @@ class TopicsController < ApplicationController
 
 
   def index
-    @topics = Topic.all
     @topics = Topic.visible_to(current_user)
   end
 
